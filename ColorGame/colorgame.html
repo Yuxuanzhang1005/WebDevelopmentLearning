@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color Game</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="colorgame.css">
+
+</head>
+<body>
+	<div class="header">
+		<h1>THE GREAT </h1>
+		<h1 id="rgb"></h1>
+		<h1>GUESSING GAME</h1>
+	</div>	
+
+<!-- 	<div class="btn-group btn-group-justified" role="group" aria-label="...">
+	  <div class="btn-group" role="group">
+	    <button type="button" class="btn btn-default" id="newcolor">New Color</button>
+	  </div>
+	  <div class="btn-group" role="group">
+	    <button type="button" class="btn btn-default" id="easy">Easy</button>
+	  </div>
+	  <div class="btn-group" role="group">
+	    <button type="button" class="btn btn-default" id="hard">Hard</button>
+	  </div>
+	</div> -->
+
+	<div id="stripe">
+		<button id="newcolor">New Color</button>
+		<span id="message"></span>
+		<button class="mode">Easy</button>
+		<button class="mode selected" id="hard">Hard</button>
+	</div>
+
+
+	<div class="container">
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+	</div>
+
+	<script type="text/javascript" src="colorgame.js"></script>
+
+</body>
+</html>
