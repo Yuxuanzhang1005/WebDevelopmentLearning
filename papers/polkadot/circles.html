@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Circles</title>
+	<link rel="stylesheet" type="text/css" href="circles.css">
+	<!-- Load the Paper.js library -->
+	<script type="text/javascript" src="paper-full.js"></script>
+	<!-- Load external PaperScript and associate it with myCanvas -->
+	<script type="text/paperscript" canvas="myCanvas">
+		var canvas = document.querySelector("canvas");
+		function drawCircles() {
+			// body...
+			var d = 70;
+		    var r = 10;
+			for (var x=30; x < (window.innerWidth-2*r); x+=d){
+				for (var y=30; y < (window.innerHeight-2*r); y+=d){
+		            var myCircle = new Path.Circle(new Point(x, y), r);
+
+			        myCircle.fillColor ='yellow';
+			    }
+			}
+		};
+
+		drawCircles();
+		$(window).resize(function() { 
+         //call to your function and check the window width
+            drawCircles();
+        });
+
+
+	</script>
+
+</head>
+<body>
+
+	<canvas id="myCanvas" resize></canvas>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</body>
+</html>
