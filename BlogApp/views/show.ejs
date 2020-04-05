@@ -3,13 +3,16 @@
     <div class="ui huge header"><%= blog.title%></div>
     <div class="ui top attached segment">
         <div class="item">
-            <img class="ui centered rounded image" src=" <%= blog.image %>">
+            <img class="ui centered rounded image" src="<%= blog.image %>">
             <div class="content">
                 <span><%= blog.created.toDateString() %></span>
                 <p><%- blog.body.replace(/\r\n/g, '<br/>').replace(/\n/g, '<br/>').replace(/\s/g, ' ') %> </p>
             </div>
+            <a class="ui orange button" href="/blogs/<%= blog._id%>/edit">EDIT</a>
+            <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST" id="delete">
+                <button class="ui small red button">DELETE</button>
+            </form>
         </div>
-
     </div>
 </div>
 
