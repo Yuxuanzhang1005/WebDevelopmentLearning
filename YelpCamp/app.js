@@ -4,11 +4,32 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+var User = require('./models/user');
 var app = express();
 // Schema Setup
+
+app.use(require('express-session')({
+  secret: "Panda is the cutest animal in the world",
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser((User.serializeUser()));
+passport.deserializeUser((User.deserializeUser()));
+
+app.use(function (req, res, next) {
+ res.locals.currentUser = req.user;
+ next();
+});
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
